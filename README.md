@@ -14,5 +14,12 @@ return <html>html:test</html> (html mediatype) -> ok
 expected: <html>html:test</html> (html mediatype)
 actual: test (json mediatype) -> not ok
 
+fix:
+- curl http://localhost:50848/api/test3 
+returns "test" (json mediatype) -> ok
+- curl http://localhost:50848/api/test3 -H "accept:text/html"
+return <html>html:test</html> (html mediatype) -> ok :-)
+
+
 
 
